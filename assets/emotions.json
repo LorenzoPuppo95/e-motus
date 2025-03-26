@@ -1,0 +1,52 @@
+[
+    {
+        "id": "user1-1742977830789",
+        "value": 4,
+        "note": "nessuna",
+        "creationDate": 1742977830789,
+        "location": {
+            "lat": 44.464664,
+            "long": 8.888540
+        }
+    },
+    {
+        "id": "user1-1742977830789",
+        "value": 3,
+        "note": "nessunaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "creationDate": 1742977830789,
+        "location": {
+            "lat": 44.464664,
+            "long": 8.888540
+        }
+    },
+    {
+        "id": "user2-1742977835789",
+        "value": 0,
+        "note": "nessuna",
+        "creationDate": 1742977835789,
+        "location": {
+            "lat": 44.464664,
+            "long": 8.888540
+        }
+    },
+    {
+        "id": "user2-1742977835789",
+        "value": 1,
+        "note": "nessuna",
+        "creationDate": 1742977835789,
+        "location": {
+            "lat": 44.464664,
+            "long": 8.888540
+        }
+    },
+    {
+        "id": "user3-1742977837239",
+        "value": 2,
+        "note": "cose a caso",
+        "creationDate": 1742977837239,
+        "location": {
+            "lat": 44.464664,
+            "long": 8.888540
+        }
+    }    
+]
