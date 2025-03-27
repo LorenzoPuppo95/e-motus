@@ -9,17 +9,8 @@ export default class MotusCard extends HTMLElement{
 
     get motus(): Motus{
         return JSON.parse(this.getAttribute('selected-motus')!);
-        // const motusStr = this.getAttribute('selected-motus');
-        // if (motusStr) {
-        //     return JSON.parse(motusStr);
-        // }
-        // return null;
     }
-
-    // get index(){
-    //     return this.getAttribute('selected-index');
-    // }
-
+    
     connectedCallback(){
         this.styling();
         this.render()
