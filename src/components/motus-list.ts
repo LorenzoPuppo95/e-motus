@@ -67,7 +67,6 @@ export default class MotusList extends HTMLElement {
         const main = document.createElement('div');
         main.classList.add('grid') 
         for (let i = 0; i  < this.moti.length; i++) {
-            this.service.orderByMotusValue(this.moti);
             const motus = this.moti[i];
             const card: MotusCard = document.createElement('motus-card') as MotusCard;
             card.setAttribute('selected-motus', JSON.stringify(motus));

@@ -1,8 +1,12 @@
+import MotusService from '../../services/motus-service';
+
 export default class MotusBar extends HTMLElement{
+    currentSortIndex: number;
 
     constructor(){
         super();
         this.attachShadow({mode: 'open'});
+        this.currentSortIndex = 0;
     }
 
     connectedCallback(){
@@ -47,23 +51,34 @@ export default class MotusBar extends HTMLElement{
                 
             </div>
         `;
-        // <select id="ordering-type">
-        //             <option value="">Select ordering type</option>
-        //             <option value="orderByCreationDate">Order by creation date</option>
-        //             <option value="orderByCreationDateReverse">Order by creation date reverse</option>
-        //             <option value="orderByMotusValue">Order by motus value</option>
-        //             <option value="orderByMotusValueReverse">Order by motus value reverse</option>
-        //         </select>
+
         const enterBtn = document.createElement('button');
-        enterBtn.appendChild(document.createTextNode('Enter'));
+        enterBtn.appendChild(document.createTextNode('Change order'));
         enterBtn.addEventListener('click', () => {
-        const selectedFunction = (document.getElementById('ordering-type') as HTMLSelectElement).value;
-        if (selectedFunction || selectedFunction !== "") {
-        } else {
-            alert("Please select an ordering type.");
-        }
+            this.cycleSort();
         });
         mainDiv.appendChild(enterBtn);
+    }
+
+    cycleSort() {
+        const motusList = document.querySelector('motus-list') as any;
+        if (!motusList) {
+            alert('Motus list component not found!');
+            return;
+        }
+        const service: MotusService = motusList.service;
+
+        const sortFunctions = [
+            service.orderByCreationDate.bind(service),
+            service.orderByCreationDateReverse.bind(service),
+            service.orderByMotusValue.bind(service),
+            service.orderByMotusValueReverse.bind(service),
+        ];
+
+        this.currentSortIndex = (this.currentSortIndex + 1) % sortFunctions.length;
+        sortFunctions[this.currentSortIndex](motusList.moti);
+
+        motusList.render();
     }
 }
 
